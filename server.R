@@ -180,7 +180,7 @@ shinyServer(function(input, output){
         
         if ((input$data == 'Total Arrests') & (input$stat == 'Poisson Regression')){
             
-                mat=exp(res_tot[2:7,c(1,3,5)])
+                mat=exp(res_tot[2:7,c(2,4,6)])
                 colnames(mat)<-c("Mean","95% CI Lower Bound","95% CI Upper Bound")
                 rownames(mat)<-c("% Black",
                                  "% White",
@@ -193,7 +193,7 @@ shinyServer(function(input, output){
             
             if ((input$data == 'Black Arrests') & (input$stat == 'Poisson Regression')){
                 
-                mat=exp(res_b[2:7,c(1,3,5)])
+                mat=exp(res_b[2:7,c(2,4,6)])
                 colnames(mat)<-c("Mean","95% CI Lower Bound","95% CI Upper Bound")
                 rownames(mat)<-c("% Total Population Arrested",
                                  "% White",
@@ -206,7 +206,7 @@ shinyServer(function(input, output){
                 
                   if ((input$data == 'White Arrests') & (input$stat == 'Poisson Regression')){
                 
-                      mat = exp(res_w[2:7,c(1,3,5)])
+                      mat = exp(res_w[2:7,c(2,4,6)])
                       colnames(mat) <- c("Mean","95% CI Lower Bound","95% CI Upper Bound")
                       rownames(mat)<-c("% Total Population Arrested",
                                        "% Black",
