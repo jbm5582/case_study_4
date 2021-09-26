@@ -21,7 +21,7 @@ shinyUI(fluidPage(
             sliderInput("year", label = "Year of Arrest",
                         min = 2010, max = 2018, value = 2010, sep = "", animate = animationOptions(interval = 500, loop = TRUE)),
             selectInput("data",label = "Demographic", c("Total Arrests", "Black Arrests", "White Arrests")),
-            selectInput("stat", label = "Statistic", c("None", "Percent Arrested", "SIR","Poisson Regression"))
+            selectInput("stat", label = "Statistic", c("None", "Percent Population Arrested","Percent of Total Arrests", "SIR","Poisson Regression"))
         ),
 
         # Show a plot of the generated distribution
