@@ -174,29 +174,30 @@ shinyServer(function(input, output){
                                                         mapscl = c(data_ordered$wht_outcomes)
                                                         title = paste(input$year,input$data,input$stat)
                                                         
-                                                    } else {
-                                                        
-                                                        if ((input$data == 'Total Arrests') & (input$stat == "Percent of Total Arrests")){
-                                                            
+                                                    } else{
+                                                       
+                                                      if ((input$data == 'Total Arrests') & (input$stat == 'Percent of Total Arrests')){
+                                                          
                                                             map = data_ordered$arrests_total_all[which(data_ordered$year == input$year)]
                                                             mapscl = data_ordered$arrests_total_all
-                                                            title = paste(input$year,input$data,input$stat)
-                                                        } else {
-                                                            
-                                                            if ((input$data == 'Black Arrests') & (input$stat == 'Percent of Total Arrests')){
-                                                                
-                                                                map = data_ordered$arrests_B_total[which(data_ordered$year == input$year)]
-                                                                mapscl = data_ordered$arrests_B_total
-                                                                title = paste(input$year,input$data,input$stat)
-                                                                
-                                                            } else{
-                                                                
-                                                                if ((input$data == 'White Arrests') & (input$stat == 'Percent of Total Arrests')){
-                                                                    
-                                                                    map = data_ordered$arrests_W_total[which(data_ordered$year == input$year)]
-                                                                    mapscl = data_ordered$arrests_W_total
-                                                                    title = paste(input$year,input$data,input$stat)
-                                                                }
+                                                            title = paste(input$year,input$data,input$stat)                                                         
+                                                       } else {
+                                                         if ((input$data == 'White Arrests') & (input$stat == 'Percent of Total Arrests')){
+                                                           
+                                                             map = data_ordered$arrests_W_total[which(data_ordered$year == input$year)]
+                                                             mapscl = data_ordered$arrests_W_total
+                                                             title = paste(input$year, input$data, input$stat)
+                                                                                                                                                                                                                                                   
+                                                             }  else{
+                                                                if ((input$data == 'Black Arrests') & (input$stat == 'Percent of Total Arrests')){
+                                                                   
+                                                                  map = data_ordered$arrests_B_total[which(data_ordered$year == input$year)]
+                                                                  mapscl = data_ordered$arrests_B_total
+                                                                  title = paste(input$year,input$data,input$stat)
+                                                             }
+                                                          }
+                                                       }
+                                                    }
                                                 }
                                             }
                                         }
