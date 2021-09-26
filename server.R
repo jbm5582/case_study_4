@@ -222,4 +222,25 @@ shinyServer(function(input, output){
         } 
             
         }, rownames = T,colnames = T, digits = 3, width = "100%")
+  
+      output$text <- renderText({
+        
+        if(input$stat == 'SIR') {
+            
+            "The standardized incidence ratio (SIR) adjustment was applied here. SIR is a method of adjusting for tract population by calculating a ratio of the observed count of arrests to the expected counts of arrests. The expected count of arrests is calculated as a rate of arrests over all tracts and years times the tract population for a given year. The population used reflects the data being displayed (e.g. Black population only when 'Black Only Arrests' is selected). Values greater than 1 suggest more observed arrests than expected.
+Plot object"
+        } else {
+            
+            if (input$stat == 'Poisson Regression'){
+                
+                "The Poisson regression option for adjustment was applied here. In this method of adjustment, a Poisson regression model with spatio-temporal covariate adjustment was applied (see table output). The mapped values display the residual spatial variation in arrests after adjustment where higher (darker) values indicate areas of increased risk. All estimates are transformed so that they can be interpreted as a multiplicative change in the relative risk of arrests. Tract population is indirectly adjusted for."
+            } else {
+                
+                if (input$stat == 'Percent Arrested'){
+                    
+                   " The 'As a Percent of Total Arrests' adjustment displays the selected arrests counts divided by the total arrest counts times 100%."
+                }
+            }
+        }
+    })
 })
