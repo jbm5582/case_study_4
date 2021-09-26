@@ -116,14 +116,14 @@ shinyServer(function(input, output){
                                 title = paste(input$year,"SIR",input$data)
                             } else {
                                 
-                                if ((input$data == 'Black Arrests') & (input$stat == 'Percent Arrested')) {
+                                if ((input$data == 'Black Arrests') & (input$stat == 'Percent Population Arrested')) {
                                     
                                     map = data_ordered$pct_arrests_ct_black[which(data_ordered$year == input$year)]
                                     mapscl = data_ordered$pct_arrests_ct_black
                                     title = paste(input$year,"Percent of Black Population Arrested")
                                 } else {
                                     
-                                    if ((input$data == 'White Arrests') & (input$stat == 'Percent Arrested')) {
+                                    if ((input$data == 'White Arrests') & (input$stat == 'Percent Population Arrested')) {
                                         
                                         map = data_ordered$pct_arrests_ct_white[which(data_ordered$year == input$year)]
                                         mapscl = data_ordered$pct_arrests_ct_white
@@ -131,7 +131,7 @@ shinyServer(function(input, output){
                                         
                                     } else {
                                         
-                                        if ((input$data == 'Total Arrests') & (input$stat == 'Percent Arrested')) {
+                                        if ((input$data == 'Total Arrests') & (input$stat == 'Percent Population Arrested')) {
                                             
                                             map = data_ordered$pct_arrests_total[which(data_ordered$year == input$year)]
                                             mapscl = data_ordered$pct_arrests_total
